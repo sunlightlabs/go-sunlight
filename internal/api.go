@@ -14,7 +14,7 @@ func GenerateURL(root string, resource ...string) string {
 	return ret
 }
 
-func QueryURI(root string, params map[string]string, resource ...string) string {
+func QueryURL(root string, params map[string]string, resource ...string) string {
 	apikey := GetAPIKey()
 	uri := GenerateURL(root, resource...) + "?apikey=" + apikey
 	for k, v := range params {

@@ -9,10 +9,10 @@ func TestGenerateURL(t *testing.T) {
 	}
 }
 
-func TestQueryURI(t *testing.T) {
+func TestQueryURL(t *testing.T) {
 	SetAPIKey("example")
 
-	url := QueryURI("https://fnord", map[string]string{
+	url := QueryURL("https://fnord", map[string]string{
 		"baz": "111",
 	}, "foo")
 
