@@ -5,17 +5,13 @@ import (
 	"strings"
 )
 
+var (
+	apiKey string
+)
+
 func GenerateURL(root string, resource ...string) string {
 	ret := root + "/" + strings.Join(resource, "/")
 	return ret
-}
-
-func GetAPIKey() string {
-	return "foo"
-}
-
-func SetAPIKey() {
-
 }
 
 func QueryURI(root string, params map[string]string, resource ...string) string {
@@ -25,4 +21,12 @@ func QueryURI(root string, params map[string]string, resource ...string) string 
 		uri = uri + "&" + url.QueryEscape(k) + "=" + url.QueryEscape(v)
 	}
 	return uri
+}
+
+func GetAPIKey() string {
+	return apiKey
+}
+
+func SetAPIKey(key string) {
+	apiKey = key
 }
