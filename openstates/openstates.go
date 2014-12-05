@@ -12,7 +12,7 @@ type Legislator struct {
 }
 
 func GetLegislator(bigId string) *Legislator {
-	l := new(Legislator)
+	l := &Legislator{}
 	internal.GetURL(l, openstatesRoot, map[string]string{}, "legislators", bigId)
 	return l
 }

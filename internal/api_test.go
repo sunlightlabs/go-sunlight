@@ -1,6 +1,9 @@
 package internal
 
-import "testing"
+import (
+	"../sunlight"
+	"testing"
+)
 
 func TestGenerateURL(t *testing.T) {
 	url := GenerateURL("https://fnord", "foo", "bar")
@@ -10,7 +13,7 @@ func TestGenerateURL(t *testing.T) {
 }
 
 func TestQueryURL(t *testing.T) {
-	SetAPIKey("example")
+	sunlight.SetAPIKey("example")
 
 	url := QueryURL("https://fnord", map[string]string{
 		"baz": "111",
@@ -22,8 +25,8 @@ func TestQueryURL(t *testing.T) {
 }
 
 func TestAPIKey(t *testing.T) {
-	SetAPIKey("foo")
-	foo := GetAPIKey()
+	sunlight.SetAPIKey("foo")
+	foo := sunlight.GetAPIKey()
 
 	if foo != "foo" {
 		t.Fatal("API Key didn't set: " + foo)

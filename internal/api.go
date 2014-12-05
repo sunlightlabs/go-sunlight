@@ -1,15 +1,12 @@
 package internal
 
 import (
+	"../sunlight"
 	"encoding/json"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-)
-
-var (
-	apiKey string
 )
 
 func GenerateURL(root string, resource ...string) string {
@@ -18,7 +15,7 @@ func GenerateURL(root string, resource ...string) string {
 }
 
 func QueryURL(root string, params map[string]string, resource ...string) string {
-	apikey := GetAPIKey()
+	apikey := sunlight.GetAPIKey()
 	uri := GenerateURL(root, resource...) + "?apikey=" + apikey
 	for k, v := range params {
 		uri = uri + "&" + url.QueryEscape(k) + "=" + url.QueryEscape(v)
@@ -37,12 +34,4 @@ func GetURL(target interface{}, root string, params map[string]string, resource 
 		panic(err.Error())
 	}
 	json.Unmarshal(body, target)
-}
-
-func GetAPIKey() string {
-	return apiKey
-}
-
-func SetAPIKey(key string) {
-	apiKey = key
 }
