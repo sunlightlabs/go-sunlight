@@ -28,3 +28,9 @@ func GetLegislator(bigId string) *Legislator {
 	internal.GetURL(l, openstatesRoot, map[string]string{}, "legislators", bigId)
 	return l
 }
+
+func GetLegislators(criteria map[string]string) *[]Legislator {
+	l := []Legislator{}
+	internal.GetURL(&l, openstatesRoot, criteria, "legislators")
+	return &l
+}

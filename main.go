@@ -6,11 +6,10 @@ import (
 )
 
 func main() {
-	leg := openstates.GetLegislator("COL000036")
-	fmt.Printf(leg.FirstName + "\n")
-	fmt.Printf(leg.LastName + "\n")
-	for i := range leg.Sources {
-		source := leg.Sources[i]
-		fmt.Printf(source.Url)
+	legs := openstates.GetLegislators(map[string]string{
+		"state": "ma",
+	})
+	for _, leg := range *legs {
+		fmt.Printf(leg.FirstName + "\n")
 	}
 }
