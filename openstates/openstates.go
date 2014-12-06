@@ -23,14 +23,20 @@ type Legislator struct {
 	Url        string   `json:"url"`
 }
 
-func GetLegislator(bigId string) *Legislator {
+func GetLegislator(bigId string) (*Legislator, error) {
 	l := &Legislator{}
-	internal.GetURL(l, openstatesRoot, map[string]string{}, "legislators", bigId)
-	return l
+	err := internal.GetURL(l, openstatesRoot, map[string]string{}, "legislators", bigId)
+	if err != nil {
+		return nil, err
+	}
+	return l, nil
 }
 
-func GetLegislators(criteria map[string]string) *[]Legislator {
+func GetLegislators(criteria map[string]string) (*[]Legislator, error) {
 	l := []Legislator{}
-	internal.GetURL(&l, openstatesRoot, criteria, "legislators")
-	return &l
+	err := internal.GetURL(&l, openstatesRoot, criteria, "legislators")
+	if err != nil {
+		return nil, err
+	}
+	return &l, nil
 }
