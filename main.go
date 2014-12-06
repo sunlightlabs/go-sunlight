@@ -17,7 +17,8 @@ func main() {
 		fmt.Printf(leg.FirstName + " " + leg.LastName + "\n")
 		for _, role := range leg.Roles {
 			if role.District != "" {
-				fmt.Printf("  " + role.Term + ", " + role.District + " (" + role.Chamber + ")\n")
+				fmt.Printf("  " + role.Term + ", " +
+					role.District + " (" + role.Chamber + ")\n")
 			}
 		}
 	}
