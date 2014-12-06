@@ -10,5 +10,7 @@ func main() {
 	if err != nil {
 		panic(err.Error())
 	}
-	fmt.Printf(meta.Name + "\n")
+	for _, term := range meta.Terms {
+		fmt.Printf(term.Name + "\n")
+	}
 }
