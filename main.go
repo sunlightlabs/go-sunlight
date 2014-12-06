@@ -21,5 +21,6 @@ func main() {
 					role.District + " (" + role.Chamber + ")\n")
 			}
 		}
+		fmt.Printf("\n")
 	}
 }
