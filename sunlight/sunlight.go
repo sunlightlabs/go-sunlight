@@ -11,6 +11,9 @@ var (
 	apiKey string = getDefaultAPIKey()
 )
 
+/**
+ * Get the default Sunlight API Key
+ */
 func getDefaultAPIKey() string {
 	ekey := os.Getenv("SUNLIGHT_API_KEY")
 	if ekey != "" {
@@ -29,10 +32,16 @@ func getDefaultAPIKey() string {
 	return strings.TrimSpace(string(fkey))
 }
 
+/**
+ * Get the current Sunlight API key
+ */
 func GetAPIKey() string {
 	return apiKey
 }
 
+/**
+ * Set the current Sunlight API key
+ */
 func SetAPIKey(key string) {
 	apiKey = key
 }
