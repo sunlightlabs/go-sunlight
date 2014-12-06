@@ -15,13 +15,22 @@ type Source struct {
 	Url string
 }
 
+/**
+ * Open States Legislator Role object. Issued for each role they take on
+ * within the Legislative body.
+ */
 type Role struct {
-	Term     string `json:"term"`
-	District string `json:"district"`
-	Chamber  string `json:"chamber"`
-	State    string `json:"state"`
-	Party    string `json:"party"`
-	Type     string `json:"type"`
+	Term           string `json:"term"`
+	District       string `json:"district"`
+	Chamber        string `json:"chamber"`
+	Committee      string `json:"committee"`
+	CommitteeId    string `json:"committee_id"`
+	Subcommittee   string `json:"subcommittee"`
+	SubcommitteeId string `json:"subcommittee_id"`
+	Position       string `json:"position"`
+	State          string `json:"state"`
+	Party          string `json:"party"`
+	Type           string `json:"type"`
 }
 
 /**
