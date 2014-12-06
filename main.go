@@ -7,9 +7,9 @@ import (
 
 func main() {
 	legs := openstates.GetLegislators(map[string]string{
-		"state": "ma",
+		"first_name": "john",
 	})
 	for _, leg := range *legs {
-		fmt.Printf(leg.FirstName + "\n")
+		fmt.Printf(leg.FirstName + " " + leg.LastName + "\n")
 	}
 }

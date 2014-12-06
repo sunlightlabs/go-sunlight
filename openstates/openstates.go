@@ -4,7 +4,7 @@ import (
 	"../internal"
 )
 
-var openstatesRoot string = "http://openstates.org/api/v1/"
+var openstatesRoot string = "http://openstates.org/api/v1"
 
 type Source struct {
 	Url string

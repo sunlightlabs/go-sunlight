@@ -4,6 +4,7 @@ import (
 	"io/ioutil"
 	"os"
 	"os/user"
+	"strings"
 )
 
 var (
@@ -25,7 +26,7 @@ func getDefaultAPIKey() string {
 		return ""
 	}
 
-	return string(fkey)
+	return strings.TrimSpace(string(fkey))
 }
 
 func GetAPIKey() string {
