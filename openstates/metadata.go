@@ -32,3 +32,14 @@ func GetMetadata(state string) (*Metadata, error) {
 	}
 	return t, nil
 }
+
+/**
+ */
+func GetMetadataList() (*[]Metadata, error) {
+	t := &[]Metadata{}
+	err := internal.GetURL(t, openstatesRoot, map[string]string{}, "metadata")
+	if err != nil {
+		return nil, err
+	}
+	return t, nil
+}

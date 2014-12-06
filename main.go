@@ -6,11 +6,11 @@ import (
 )
 
 func main() {
-	meta, err := openstates.GetMetadata("ma")
+	meta, err := openstates.GetMetadataList()
 	if err != nil {
 		panic(err.Error())
 	}
-	for _, term := range meta.Terms {
-		fmt.Printf(term.Name + "\n")
+	for _, state := range *meta {
+		fmt.Printf(state.Name + "\n")
 	}
 }
