@@ -23,12 +23,3 @@ func TestQueryURL(t *testing.T) {
 		t.Fatal("URL invalid: " + url)
 	}
 }
-
-func TestAPIKey(t *testing.T) {
-	sunlight.SetAPIKey("foo")
-	foo := sunlight.GetAPIKey()
-
-	if foo != "foo" {
-		t.Fatal("API Key didn't set: " + foo)
-	}
-}
