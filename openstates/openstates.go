@@ -15,6 +15,15 @@ type Source struct {
 	Url string
 }
 
+type Role struct {
+	Term     string `json:"term"`
+	District string `json:"district"`
+	Chamber  string `json:"chamber"`
+	State    string `json:"state"`
+	Party    string `json:"party"`
+	Type     string `json:"type"`
+}
+
 /**
  * Open States Legislator object. Issued for members of the Legislature.
  */
@@ -23,6 +32,7 @@ type Legislator struct {
 	LastName   string   `json:"last_name"`
 	FullName   string   `json:"full_name"`
 	Sources    []Source `json:"sources"`
+	Roles      []Role   `json:"roles"`
 	Id         string   `json:"id"`
 	MiddleName string   `json:"middle_name"`
 	State      string   `json:"state"`
