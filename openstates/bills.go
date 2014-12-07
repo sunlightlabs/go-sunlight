@@ -24,23 +24,27 @@ type BillVersion struct {
 }
 
 type Bill struct {
-	BillId          string       `json:"bill_id"`
-	Id              string       `json:"id"`
-	AllIds          []string     `json:"all_ids"`
-	AlternateTitles []string     `json:"alternate_titles"`
-	Companions      []string     `json:"companions"`
-	Country         string       `json:"country"`
-	Sources         []Source     `json:"sources"`
-	Level           string       `json:"level"`
-	Session         string       `json:"session"`
-	Actions         []BillAction `json:"actions"`
-	Sponsors        []Sponsor    `json:"sponsors"`
-	Chamber         string       `json:"chamber"`
-	Session         string       `json:"session"`
-	State           string       `json:"state"`
-	Subjects        []string     `json:"subjects"`
-	Title           string       `json:"title"`
-	Types           []string     `json:"type"`
+	BillId     string   `json:"bill_id"`
+	Id         string   `json:"id"`
+	AllIds     []string `json:"all_ids"`
+	Companions []string `json:"companions"`
+
+	AlternateTitles []string `json:"alternate_titles"`
+	Title           string   `json:"title"`
+
+	Country string `json:"country"`
+	Level   string `json:"level"`
+	Session string `json:"session"`
+	State   string `json:"state"`
+
+	Actions  []BillAction  `json:"actions"`
+	Sponsors []BillSponsor `json:"sponsors"`
+	Chamber  string        `json:"chamber"`
+
+	Subjects []string `json:"subjects"`
+	Types    []string `json:"type"`
+
+	Sources []Source `json:"sources"`
 }
 
 func GetBill(state, session, billId string) (*Bill, error) {
