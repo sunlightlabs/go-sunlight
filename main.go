@@ -6,11 +6,14 @@ import (
 )
 
 func main() {
-	legs, err := openstates.GetLegislatorsByLatLon(38.889730, -77.017626)
+	// bill, err := openstates.GetBill("wy", "2013", "HB 149")
+	bills, err := openstates.GetBills(map[string]string{
+		"q": "beer",
+	})
 	if err != nil {
 		panic(err.Error())
 	}
-	for _, leg := range *legs {
-		fmt.Printf(leg.FullName + "\n")
+	for _, bill := range *bills {
+		fmt.Printf(bill.Title + "\n")
 	}
 }
