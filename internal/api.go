@@ -1,8 +1,8 @@
 package internal
 
 import (
-	"../sunlight"
 	"encoding/json"
+	"github.com/sunlightlabs/go-sunlight/sunlight"
 	"io/ioutil"
 	"net/http"
 	"net/url"

@@ -1,8 +1,8 @@
 package main
 
 import (
-	"./openstates"
 	"fmt"
+	"github.com/sunlightlabs/go-sunlight/openstates"
 )
 
 func main() {

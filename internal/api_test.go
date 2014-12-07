@@ -1,7 +1,7 @@
 package internal
 
 import (
-	"../sunlight"
+	"github.com/sunlightlabs/go-sunlight/sunlight"
 	"testing"
 )
 

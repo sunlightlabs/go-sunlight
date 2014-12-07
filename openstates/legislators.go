@@ -1,8 +1,8 @@
 package openstates
 
 import (
-	"../internal"
 	"fmt"
+	"github.com/sunlightlabs/go-sunlight/internal"
 )
 
 /**

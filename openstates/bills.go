@@ -1,7 +1,7 @@
 package openstates
 
 import (
-	"../internal"
+	"github.com/sunlightlabs/go-sunlight/internal"
 )
 
 type BillAction struct {
