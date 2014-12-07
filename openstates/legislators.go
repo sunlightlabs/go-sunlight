@@ -2,6 +2,7 @@ package openstates
 
 import (
 	"../internal"
+	"fmt"
 )
 
 /**
@@ -59,6 +60,20 @@ func GetLegislator(bigId string) (*Legislator, error) {
 func GetLegislators(criteria map[string]string) (*[]Legislator, error) {
 	l := []Legislator{}
 	err := internal.GetURL(&l, openstatesRoot, criteria, "legislators")
+	if err != nil {
+		return nil, err
+	}
+	return &l, nil
+}
+
+func GetLegislatorsByLatLon(lat float32, lon float32) (*[]Legislator, error) {
+	var params = map[string]string{
+		"lat":  fmt.Sprintf("%f", lat),
+		"long": fmt.Sprintf("%f", lon),
+	}
+
+	l := []Legislator{}
+	err := internal.GetURL(&l, openstatesRoot, params, "legislators", "geo")
 	if err != nil {
 		return nil, err
 	}

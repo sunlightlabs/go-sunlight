@@ -6,11 +6,11 @@ import (
 )
 
 func main() {
-	meta, err := openstates.GetMetadataList()
+	legs, err := openstates.GetLegislatorsByLatLon(38.889730, -77.017626)
 	if err != nil {
 		panic(err.Error())
 	}
-	for _, state := range *meta {
-		fmt.Printf(state.Name + "\n")
+	for _, leg := range *legs {
+		fmt.Printf(leg.FullName + "\n")
 	}
 }
