@@ -13,14 +13,14 @@ type EventParticipant struct {
 }
 
 type Event struct {
-	Description  string        `json:"description"`
-	Id           string        `json:"id"`
-	Participants []Participant `json:"participants"`
-	Session      string        `json:"session"`
-	State        string        `json:"state"`
-	Timezone     string        `json:"timezone"`
-	Type         string        `json:"type"`
-	Sources      []Source      `json:"sources"`
+	Description  string             `json:"description"`
+	Id           string             `json:"id"`
+	Participants []EventParticipant `json:"participants"`
+	Session      string             `json:"session"`
+	State        string             `json:"state"`
+	Timezone     string             `json:"timezone"`
+	Type         string             `json:"type"`
+	Sources      []Source           `json:"sources"`
 }
 
 func GetEvent(bigId string) (*Event, error) {
