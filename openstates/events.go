@@ -14,6 +14,7 @@ type EventParticipant struct {
 
 type Event struct {
 	Timestamps
+	Sources
 
 	Description  string             `json:"description"`
 	Id           string             `json:"id"`
@@ -23,7 +24,6 @@ type Event struct {
 	State        string             `json:"state"`
 	Timezone     string             `json:"timezone"`
 	Type         string             `json:"type"`
-	Sources      []Source           `json:"sources"`
 }
 
 func GetEvent(bigId string) (*Event, error) {

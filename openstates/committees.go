@@ -12,6 +12,7 @@ type CommitteeMember struct {
 
 type Committee struct {
 	Timestamps
+	Sources
 
 	AllIds       []string          `json:"all_ids"`
 	Chamber      string            `json:"chamber"`
@@ -21,7 +22,6 @@ type Committee struct {
 	State        string            `json:"state"`
 	Subcommittee string            `json:"subcommittee"`
 	Members      []CommitteeMember `json:"members"`
-	Sources      []Source          `json:"sources"`
 }
 
 func GetCommittee(bigId string) (*Committee, error) {

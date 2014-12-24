@@ -25,6 +25,7 @@ type BillVersion struct {
 
 type Bill struct {
 	Timestamps
+	Sources
 
 	BillId     string   `json:"bill_id"`
 	Id         string   `json:"id"`
@@ -45,8 +46,6 @@ type Bill struct {
 
 	Subjects []string `json:"subjects"`
 	Types    []string `json:"type"`
-
-	Sources []Source `json:"sources"`
 }
 
 func GetBill(state, session, billId string) (*Bill, error) {

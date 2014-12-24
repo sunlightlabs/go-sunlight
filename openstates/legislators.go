@@ -28,18 +28,18 @@ type Role struct {
  */
 type Legislator struct {
 	Timestamps
+	Sources
 
-	FirstName  string   `json:"first_name"`
-	LastName   string   `json:"last_name"`
-	FullName   string   `json:"full_name"`
-	Sources    []Source `json:"sources"`
-	Roles      []Role   `json:"roles"`
-	Id         string   `json:"id"`
-	MiddleName string   `json:"middle_name"`
-	State      string   `json:"state"`
-	Active     bool     `json:"active"`
-	PhotoUrl   string   `json:"photo_url"`
-	Url        string   `json:"url"`
+	FirstName  string `json:"first_name"`
+	LastName   string `json:"last_name"`
+	FullName   string `json:"full_name"`
+	Roles      []Role `json:"roles"`
+	Id         string `json:"id"`
+	MiddleName string `json:"middle_name"`
+	State      string `json:"state"`
+	Active     bool   `json:"active"`
+	PhotoUrl   string `json:"photo_url"`
+	Url        string `json:"url"`
 }
 
 /**
