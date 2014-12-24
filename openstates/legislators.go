@@ -6,34 +6,28 @@ import (
 )
 
 /**
- * Open States Legislator Role object. Issued for each role they take on
- * within the Legislative body.
- */
-type Role struct {
-	Term           string `json:"term"`
-	District       string `json:"district"`
-	Chamber        string `json:"chamber"`
-	Committee      string `json:"committee"`
-	CommitteeId    string `json:"committee_id"`
-	Subcommittee   string `json:"subcommittee"`
-	SubcommitteeId string `json:"subcommittee_id"`
-	Position       string `json:"position"`
-	State          string `json:"state"`
-	Party          string `json:"party"`
-	Type           string `json:"type"`
-}
-
-/**
  * Open States Legislator object. Issued for members of the Legislature.
  */
 type Legislator struct {
 	Timestamps
 	Sources
 
-	FirstName  string `json:"first_name"`
-	LastName   string `json:"last_name"`
-	FullName   string `json:"full_name"`
-	Roles      []Role `json:"roles"`
+	FirstName string `json:"first_name"`
+	LastName  string `json:"last_name"`
+	FullName  string `json:"full_name"`
+	Roles     []struct {
+		Term           string `json:"term"`
+		District       string `json:"district"`
+		Chamber        string `json:"chamber"`
+		Committee      string `json:"committee"`
+		CommitteeId    string `json:"committee_id"`
+		Subcommittee   string `json:"subcommittee"`
+		SubcommitteeId string `json:"subcommittee_id"`
+		Position       string `json:"position"`
+		State          string `json:"state"`
+		Party          string `json:"party"`
+		Type           string `json:"type"`
+	} `json:"roles"`
 	Id         string `json:"id"`
 	MiddleName string `json:"middle_name"`
 	State      string `json:"state"`
