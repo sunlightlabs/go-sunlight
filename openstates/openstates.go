@@ -1,5 +1,9 @@
 package openstates
 
+import (
+	"github.com/sunlightlabs/go-sunlight/internal"
+)
+
 // Open States API root URL.
 var openstatesRoot string = "http://openstates.org/api/v1"
 
