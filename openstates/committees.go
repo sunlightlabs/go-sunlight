@@ -11,6 +11,8 @@ type CommitteeMember struct {
 }
 
 type Committee struct {
+	Timestamps
+
 	AllIds       []string          `json:"all_ids"`
 	Chamber      string            `json:"chamber"`
 	Committee    string            `json:"committee"`

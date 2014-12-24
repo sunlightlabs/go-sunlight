@@ -24,6 +24,8 @@ type BillVersion struct {
 }
 
 type Bill struct {
+	Timestamps
+
 	BillId     string   `json:"bill_id"`
 	Id         string   `json:"id"`
 	AllIds     []string `json:"all_ids"`

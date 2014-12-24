@@ -10,3 +10,10 @@ var openstatesRoot string = "http://openstates.org/api/v1"
 type Source struct {
 	Url string
 }
+
+/**
+ */
+type Timestamps struct {
+	UpdatedAt internal.Time `json:"updated_at"`
+	CreatedAt internal.Time `json:"created_at"`
+}

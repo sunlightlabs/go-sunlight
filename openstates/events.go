@@ -13,6 +13,8 @@ type EventParticipant struct {
 }
 
 type Event struct {
+	Timestamps
+
 	Description  string             `json:"description"`
 	Id           string             `json:"id"`
 	When         internal.Time      `json:"when"`

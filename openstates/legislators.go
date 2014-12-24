@@ -27,6 +27,8 @@ type Role struct {
  * Open States Legislator object. Issued for members of the Legislature.
  */
 type Legislator struct {
+	Timestamps
+
 	FirstName  string   `json:"first_name"`
 	LastName   string   `json:"last_name"`
 	FullName   string   `json:"full_name"`
