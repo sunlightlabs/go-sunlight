@@ -5,23 +5,24 @@ import (
 )
 
 type CommitteeMember struct {
-	LegId string `json:"leg_id"`
-	Name  string `json:"name"`
-	Role  string `json:"role"`
 }
 
 type Committee struct {
 	Timestamps
 	Sources
 
-	AllIds       []string          `json:"all_ids"`
-	Chamber      string            `json:"chamber"`
-	Committee    string            `json:"committee"`
-	Id           string            `json:"id"`
-	ParentId     string            `json:"parent_id"`
-	State        string            `json:"state"`
-	Subcommittee string            `json:"subcommittee"`
-	Members      []CommitteeMember `json:"members"`
+	AllIds       []string `json:"all_ids"`
+	Chamber      string   `json:"chamber"`
+	Committee    string   `json:"committee"`
+	Id           string   `json:"id"`
+	ParentId     string   `json:"parent_id"`
+	State        string   `json:"state"`
+	Subcommittee string   `json:"subcommittee"`
+	Members      []struct {
+		LegId string `json:"leg_id"`
+		Name  string `json:"name"`
+		Role  string `json:"role"`
+	} `json:"members"`
 }
 
 func GetCommittee(bigId string) (*Committee, error) {

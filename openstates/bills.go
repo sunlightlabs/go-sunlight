@@ -4,25 +4,6 @@ import (
 	"github.com/sunlightlabs/go-sunlight/internal"
 )
 
-type BillAction struct {
-	Action string   `json:"action"`
-	Actor  string   `json:"actor"`
-	Types  []string `json:"type"`
-}
-
-type BillSponsor struct {
-	LegId string `json:"leg_id"`
-	Name  string `json:"name"`
-	Type  string `json:"type"`
-}
-
-type BillVersion struct {
-	DocId    string `json:"doc_id"`
-	Mimetype string `json:"mimetype"`
-	Name     string `json:"name"`
-	Url      string `json:"url"`
-}
-
 type Bill struct {
 	Timestamps
 	Sources
@@ -40,9 +21,17 @@ type Bill struct {
 	Session string `json:"session"`
 	State   string `json:"state"`
 
-	Actions  []BillAction  `json:"actions"`
-	Sponsors []BillSponsor `json:"sponsors"`
-	Chamber  string        `json:"chamber"`
+	Actions []struct {
+		Action string   `json:"action"`
+		Actor  string   `json:"actor"`
+		Types  []string `json:"type"`
+	} `json:"actions"`
+	Sponsors []struct {
+		LegId string `json:"leg_id"`
+		Name  string `json:"name"`
+		Type  string `json:"type"`
+	} `json:"sponsors"`
+	Chamber string `json:"chamber"`
 
 	Subjects []string `json:"subjects"`
 	Types    []string `json:"type"`
