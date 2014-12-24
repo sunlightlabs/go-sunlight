@@ -15,6 +15,7 @@ type EventParticipant struct {
 type Event struct {
 	Description  string             `json:"description"`
 	Id           string             `json:"id"`
+	When         internal.Time      `json:"when"`
 	Participants []EventParticipant `json:"participants"`
 	Session      string             `json:"session"`
 	State        string             `json:"state"`
