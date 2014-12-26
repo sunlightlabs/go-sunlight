@@ -15,7 +15,7 @@ type Legislator struct {
 	Chamber     string `json:"chamber"`
 	ContactForm string `json:"contact_form"`
 	CrpId       string `json:"crp_id"`
-	District    string `json:"district"`
+	District    int    `json:"district"`
 	FacebookId  string `json:"facebook_id"`
 	Fax         string `json:"fax"`
 
@@ -26,7 +26,7 @@ type Legislator struct {
 	Gender     string   `json:"gender"`
 
 	GovtrackId string `json:"govtrack_id"`
-	ICPSRId    string `json:"icpsr_id"`
+	ICPSRId    int    `json:"icpsr_id"`
 	InOffice   bool   `json:"in_office"`
 
 	NameSuffix string `json:"name_suffix"`
@@ -44,7 +44,7 @@ type Legislator struct {
 	Title     string `json:"title"`
 
 	TwitterId   string `json:"twitter_id"`
-	VotesmartId string `json:"votesmart_id"`
+	VotesmartId int    `json:"votesmart_id"`
 	Website     string `json:"website"`
 	YoutubeId   string `json:"youtube_id"`
 }
