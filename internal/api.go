@@ -23,16 +23,18 @@ func QueryURL(root string, params map[string]string, resource ...string) string 
 	return uri
 }
 
-func GetURL(target interface{}, root string, params map[string]string, resource ...string) error {
+func GetURL(target interface{}, root string, params map[string]string, resource ...string) (err error) {
 	url := QueryURL(root, params, resource...)
 	res, err := http.Get(url)
 	if err != nil {
-		return err
+		return
 	}
 	body, err := ioutil.ReadAll(res.Body)
 	if err != nil {
-		return err
+		return
 	}
 	json.Unmarshal(body, target)
-	return nil
+	json.Unmarshal(body, target)
+	err = json.Unmarshal(body, target)
+	return
 }
