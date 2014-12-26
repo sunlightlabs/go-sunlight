@@ -1,8 +1,6 @@
 package congress
 
 import (
-	"fmt"
-
 	"github.com/sunlightlabs/go-sunlight/internal"
 )
 
@@ -62,7 +60,6 @@ type LegislatorResult struct {
 func GetLegislators(criteria map[string]string) (*LegislatorResult, error) {
 	l := LegislatorResult{}
 	err := internal.GetURL(&l, congressRoot, criteria, "legislators")
-	fmt.Printf("%d\n", len(l.Results))
 	if err != nil {
 		return nil, err
 	}

@@ -33,8 +33,6 @@ func GetURL(target interface{}, root string, params map[string]string, resource 
 	if err != nil {
 		return
 	}
-	json.Unmarshal(body, target)
-	json.Unmarshal(body, target)
 	err = json.Unmarshal(body, target)
 	return
 }
