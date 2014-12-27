@@ -53,6 +53,16 @@ type LegislatorResult struct {
 	Results []Legislator `json:"results"`
 }
 
+func (l Legislator) GetBills() (*BillResult, error) {
+	bills, err := BillSearch(map[string]string{
+		"sponsor_id": l.BioguideId,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return bills, nil
+}
+
 func GetLegislators(criteria map[string]string) (*LegislatorResult, error) {
 	l := LegislatorResult{}
 	err := internal.GetURL(&l, congressRoot, criteria, "legislators")
