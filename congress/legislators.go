@@ -1,6 +1,7 @@
 package congress
 
 import (
+	"fmt"
 	"github.com/sunlightlabs/go-sunlight/internal"
 )
 
@@ -60,6 +61,20 @@ type LegislatorResult struct {
 func GetLegislators(criteria map[string]string) (*LegislatorResult, error) {
 	l := LegislatorResult{}
 	err := internal.GetURL(&l, congressRoot, criteria, "legislators")
+	if err != nil {
+		return nil, err
+	}
+	return &l, nil
+}
+
+func GetLegislatorsByLatLon(lat float32, lon float32) (*LegislatorResult, error) {
+	var params = map[string]string{
+		"latitude":  fmt.Sprintf("%f", lat),
+		"longitude": fmt.Sprintf("%f", lon),
+	}
+
+	l := LegislatorResult{}
+	err := internal.GetURL(&l, congressRoot, params, "legislators", "locate")
 	if err != nil {
 		return nil, err
 	}
