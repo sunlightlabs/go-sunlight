@@ -77,3 +77,13 @@ func BillSearch(criteria map[string]string) (*BillResult, error) {
 	}
 	return &l, nil
 }
+
+func BillTextSearch(query string, criteria map[string]string) (*BillResult, error) {
+	criteria["query"] = query
+	l := BillResult{}
+	err := internal.GetURL(&l, congressRoot, criteria, "bills", "search")
+	if err != nil {
+		return nil, err
+	}
+	return &l, nil
+}
