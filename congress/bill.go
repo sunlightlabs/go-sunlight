@@ -35,45 +35,33 @@ type Bill struct {
 		LastActionAt string `json:"last_action_at"`
 	} `json:"history"`
 
-	/*
-	       "last_version": {
-	           "version_code": "enr",
-	           "issued_on": "2014-12-16",
-	           "version_name": "Enrolled Bill",
-	           "bill_version_id": "hjres131-113-enr",
-	           "urls": {
-	               "html": "http://www.gpo.gov/fdsys/pkg/BILLS-113hjres131enr/html/BILLS-113hjres131enr.htm",
-	               "pdf": "http://www.gpo.gov/fdsys/pkg/BILLS-113hjres131enr/pdf/BILLS-113hjres131enr.pdf",
-	               "xml": "http://www.gpo.gov/fdsys/pkg/BILLS-113hjres131enr/xml/BILLS-113hjres131enr.xml"
-	           },
-	           "pages": 1
-	       },
-	       "last_version_on": "2014-12-16",
-	       "last_vote_at": "2014-12-13",
-	       "number": 131,
-	       "official_title": "Making further continuing appropriations for fiscal year 2015, and for other purposes.",
-	       "popular_title": null,
-	       "related_bill_ids": [
-	           "hjres130-113"
-	       ],
-	       "short_title": null,
-	       "sponsor": {
-	           "first_name": "Harold",
-	           "last_name": "Rogers",
-	           "middle_name": null,
-	           "name_suffix": null,
-	           "nickname": "Hal",
-	           "title": "Rep"
-	       },
-	       "sponsor_id": "R000395",
-	       "urls": {
-	           "congress": "http://beta.congress.gov/bill/113th/house-joint-resolution/131",
-	           "govtrack": "https://www.govtrack.us/congress/bills/113/hjres131",
-	           "opencongress": "http://www.opencongress.org/bill/hjres131-113"
-	       },
-	       "withdrawn_cosponsors_count": 0
-	   },
-	*/
+	LastVersion struct {
+		VersionCode   string            `json:"version_code"`
+		IssuedOn      string            `json:"issued_on"`
+		VersionName   string            `json:"version_name"`
+		BillVersionId string            `json:"bill_version_id"`
+		Urls          map[string]string `json:"urls"`
+		Pages         int               `json:"pages"`
+	} `json:"last_version"`
+
+	LastVersionOn  string   `json:"last_version_on"`
+	LastVoteAt     string   `json:"last_vote_at"`
+	Number         int      `json:"number"`
+	OfficialTitle  string   `json:"official_title"`
+	PopularTitle   string   `json:"popular_title"`
+	RelatedBillIds []string `json:"related_bill_ids"`
+	ShortTitle     string   `json:"short_title"`
+	Sponsor        struct {
+		FirstName  string `json:"first_name"`
+		LastName   string `json:"last_name"`
+		MiddleName string `json:"middle_name"`
+		NameSuffix string `json:"name_suffix"`
+		Nickname   string `json:"nickname"`
+		Title      string `json:"title"`
+	} `json:"sponsor"`
+	SponsorId                string            `json:"sponsor_id"`
+	Urls                     map[string]string `json:"urls"`
+	WithdrawnCosponsorsCount int               `json:"withdrawn_cosponsors_count"`
 }
 
 type BillResult struct {
