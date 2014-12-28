@@ -53,7 +53,7 @@ type LegislatorResult struct {
 	Results []Legislator `json:"results"`
 }
 
-func (l Legislator) GetBills() (*BillResult, error) {
+func (l Legislator) GetSponsoredBills() (*BillResult, error) {
 	bills, err := BillSearch(map[string]string{
 		"sponsor_id": l.BioguideId,
 	})
