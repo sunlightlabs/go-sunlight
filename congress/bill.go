@@ -30,9 +30,7 @@ type Bill struct {
 		SenatePassageResult string `json:"senate_passage_result"`
 		// "senate_passage_result_at": "2014-12-13",
 
-		Vetoed       bool   `json:"vetoed"`
-		IntroducedOn string `json:"introduced_on"`
-		LastActionAt string `json:"last_action_at"`
+		Vetoed bool `json:"vetoed"`
 	} `json:"history"`
 
 	LastVersion struct {
@@ -44,8 +42,11 @@ type Bill struct {
 		Pages         int               `json:"pages"`
 	} `json:"last_version"`
 
-	LastVersionOn  string   `json:"last_version_on"`
-	LastVoteAt     string   `json:"last_vote_at"`
+	LastVersionOn string `json:"last_version_on"`
+	LastVoteAt    string `json:"last_vote_at"`
+	IntroducedOn  string `json:"introduced_on"`
+	LastActionAt  string `json:"last_action_at"`
+
 	Number         int      `json:"number"`
 	OfficialTitle  string   `json:"official_title"`
 	PopularTitle   string   `json:"popular_title"`
