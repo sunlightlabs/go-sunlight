@@ -20,9 +20,9 @@ type Bill struct {
 		Active bool `json:"active"`
 		// "active_at": "2014-12-12T20:04:00Z",
 
-		AwaitingSignature bool `json:"awaiting_signature"`
-		Enacted           bool `json:"enacted"`
-		// "enacted_at": "2014-12-13",
+		AwaitingSignature bool   `json:"awaiting_signature"`
+		Enacted           bool   `json:"enacted"`
+		EnactedAt         string `json:"enacted_at"`
 
 		HousePassageResult string `json:"house_passage_result"`
 		// "house_passage_result_at": "2014-12-12T20:04:00Z",
